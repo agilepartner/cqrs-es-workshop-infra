@@ -1,0 +1,47 @@
+version: '3'
+services: 
+
+    # https://github.com/nissbran/eventstore-cluster-docker-compose
+
+    eventstore:
+        image: eventstore/eventstore
+        ports:  
+            - "2113:2113"
+            - "1113:1113"
+        restart: always
+
+    redis:
+        image: "redis"
+        ports:  
+            - "6379:6379"
+        restart: always
+
+    # ci-build:
+    #     image: microsoft/aspnetcore-build:1.0-2.0
+    #     volumes:
+    #         - .:/src
+    #     working_dir: /src
+    #     command: /bin/bash -c "dotnet restore ./Lab1.sln && dotnet publish ./Lab1.sln -c Release -o ./obj/Docker/publish"
+
+
+    # mongo:
+    #     image: mongo
+    #     restart: always
+    #     environment:
+    #         MONGO_INITDB_ROOT_USERNAME: root
+    #         MONGO_INITDB_ROOT_PASSWORD: example
+    #     ports:
+    #         - 27017:27017
+    #     mem_limit: 200m
+
+    # mongo-express:
+    #     image: mongo-express
+    #     restart: always
+    #     ports:
+    #         - 27000:27000
+    #     environment:
+    #         ME_CONFIG_MONGODB_ADMINUSERNAME: root
+    #         ME_CONFIG_MONGODB_ADMINPASSWORD: example
+    #     depends_on:
+    #         - mongo
+    #     mem_limit: 200m
