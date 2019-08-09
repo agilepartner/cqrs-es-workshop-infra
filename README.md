@@ -1,4 +1,4 @@
-# Infrastructure for Agile Partner DDD/CQRS/ES² workshop
+# Infrastructure for Agile Partner's DDD/CQRS/ES² workshop
 
 ## Tools & components
 
